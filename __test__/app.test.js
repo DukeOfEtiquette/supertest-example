@@ -12,6 +12,7 @@ describe('Server', () => {
       .expect(9000) // wtf?
       .expect('Content-Type', /garbage/) // wtf?
       .end((err, res) => {
+        if(err) throw err;
         let stooges = ['Larry', 'Moe', 'Shemp'];
 
         // Uncomment to show it fails as expected
